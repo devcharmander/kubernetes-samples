@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: anusha-website
+  labels:
+    app: "http-server"
+    type: "front-end"
+spec:
+  containers:
+    - name: sample-nginx
+      image: nginx

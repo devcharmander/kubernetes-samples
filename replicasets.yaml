@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: sample-replica-set
+  labels:
+    type: replicaset
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: anusha-website
+      labels:
+        app: "http-server"
+        type: "front-end"
+    spec:
+      containers:
+        - name: sample-nginx
+          image: nginx
+  selector:
+    matchLabels:
+      app: "http-server"

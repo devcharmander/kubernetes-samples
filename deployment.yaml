@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-deployment
+  labels:
+    type: deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: anusha-website
+      labels:
+        app: http-server
+        type: front-end
+    spec:
+      containers:
+        - name: sample-nginx
+          image: nginx
+  selector:
+    matchLabels:
+      app: http-server
